@@ -1,4 +1,4 @@
 # Min Phone Myat Zaw - Portfolio Website
 My Portfolio Website
 
-Live at - https://czlad.github.io/Portfolio-Website---Min-Phone-Myat-Zaw/
+Live at - https://czlad.github.io/Min-Phone-Myat-Zaw---Portfolio-Website
