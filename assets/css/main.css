@@ -120,7 +120,9 @@ input, select, textarea {
 			/* color: #e44c65 !important; */
 			/* color: #6595e1 !important; */
 			/* Dark Gold */
-			color: #dca20e !important;
+			color: #e1a610 !important;
+			/* color: #6595e1 !important; */
+			/* Basic Hover Lighter Blue */
 			border-bottom-color: transparent;
 		}
 
@@ -2861,9 +2863,10 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #6595e1;
+			/* Button light blue */
+			box-shadow: inset 0 0 0 1px #e1a610;
 			/* color: #e44c65 !important; */
-			color: #6595e1 !important;
+			color: #e1a610 !important;
 		}
 
 		input[type="submit"]:active,
@@ -2916,7 +2919,8 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			.button.primary:hover {
 				/* background-color: #e76278; */
-				background-color: #004F6F
+				background-color: #314f7f;
+				color: #e1a610 !important;
 			}
 
 			input[type="submit"].primary:active,
@@ -2972,7 +2976,14 @@ input, select, textarea {
 			top: 50%;
 			width: 2em;
 			z-index: 1;
+			transition: background-image 0.3s ease;
 		}
+		.goto-next:hover:before,
+		.goto-next:active:before {
+			background-image: url("images/gold\ arrow.svg");
+		}
+
+
 
 /* Spotlight */
 
@@ -3353,8 +3364,10 @@ input, select, textarea {
 
 			.dropotron > li.active > a, .dropotron > li.active > span {
 				/* color: #e44c65; */
-				/* Dropotron Darker Gold */
+				/* Dropotron Span Darker Gold */
 				color: #cb950e;
+				/* Droptron Span Darker Lighter Blue  */
+				/* color: #507ec8; */
 			}
 
 		.dropotron.level-0 {
@@ -3445,8 +3458,10 @@ input, select, textarea {
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
 						/* color: #e44c65; */
-						/* Active Span Darker Gold */
-						color: #cb950e;
+						/* Header Span Darker Gold */
+						color: #cf980e;
+						/* Header Span Darker Lighter Blue */
+						/* color:  #507ec8; */
 					}
 
 					#header nav ul li > ul {
