@@ -103,6 +103,7 @@ input, select, textarea {
 		font-size: 15pt;
 		font-weight: 100;
 		line-height: 1.75em;
+		opacity: 1;
 	}
 
 	a {
@@ -635,6 +636,25 @@ input, select, textarea {
 		}
 
 	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	body {
+		opacity: 0;
+		animation: fade-in 0.5s ease-out forwards;
+	}
+
+	body.fade-out{
+		animation: overlay-hide 0.5s ease-in forwards /* Match this with the duration in JS */
+	}
+
 
 /* Container */
 

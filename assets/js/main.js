@@ -246,5 +246,22 @@
 
 		$banner
 			._parallax();
+	
+	//Smooth page transitions
+	$('a').on('click', (event) => {
+		if ($(event.currentTarget).attr('href').indexOf('#') === 0) {
+			// Ignore internal links (e.g., those linking within the same page)
+			return;
+		}
+	
+		event.preventDefault(); // Prevent immediate navigation
+		const newLocation = event.currentTarget.href;
+	
+		$body.addClass('fade-out'); // Add fade-out class to the body
+	
+		setTimeout(() => {
+			window.location = newLocation; // Navigate to the new page after the fade
+		}, 500); // Match this time with your CSS transition duration
+	});
 
 })(jQuery);
