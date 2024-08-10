@@ -264,4 +264,11 @@
 		}, 500); // Match this time with your CSS transition duration
 	});
 
+	// Force page reload on back/forward navigation
+	$window.on('pageshow', function(event) {
+        if (event.originalEvent.persisted) {
+            window.location.reload();
+        }
+    });
+
 })(jQuery);
