@@ -2192,8 +2192,9 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
-			/* background: #23395d; */
+			/* background: #e44c65; */
+			/* Dark Gold in Header */
+			background: #9a720c;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -2263,7 +2264,6 @@ input, select, textarea {
 		select:focus,
 		textarea:focus {
 			border-color: #e44c65;
-			/* border-color: #23395d; */
 		}
 
 	select {
@@ -3222,8 +3222,8 @@ input, select, textarea {
 	}
 
 		.wrapper.style2 {
-			background: #e44c65;
-			/* background: #23395d; */
+			/* background: #e44c65; */
+			background: #23395d;
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3259,7 +3259,6 @@ input, select, textarea {
 			.wrapper.style2 .button.primary {
 				background-color: #ffffff;
 				color: #e44c65 !important;
-				/* color: #23395d; */
 			}
 
 				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
