@@ -3963,7 +3963,9 @@ input, select, textarea {
 					#titleBar .toggle:before {
 						/* background: #e44c65; */
 						background: #23395d;;
-						color: rgba(255, 255, 255, 0.5);
+						/* color: rgba(255, 255, 255, 0.5); */
+						/* Dark Gold */
+						color:  #e1a610;
 						/* color: rgba(184, 134, 11, 1); */
 						content: '\f0c9';
 						display: block;
@@ -3975,14 +3977,8 @@ input, select, textarea {
 						text-align: center;
 						top: 0;
 						width: 54px;
-						transition: background-color 0.3s ease, color 0.3s ease;
 					}
-
-					#titleBar.toggle:before:hover{
-						background: #004F6F;
-						color: rgba(255, 255, 255, 0.7);
-					}
-
+					
 			#navPanel {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
