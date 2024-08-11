@@ -660,7 +660,19 @@ input, select, textarea {
 		animation: overlay-hide 0.5s ease-in forwards /* Match this with the duration in JS */
 	}
 
+	/* flyUp animation currently used with section tag*/
+	/* Initial state of fly-up sections */
+	.fly-up-section {
+	    opacity: 0;
+	    transform: translateY(20px);
+	    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+	}
 
+	/* State when the section is in view */
+	.fly-up-section.in-view {
+	    opacity: 1;
+	    transform: translateY(0);
+	}
 /* Container */
 
 	.container {
@@ -4194,3 +4206,49 @@ input, select, textarea {
 header {
     overflow: hidden; /* Optional for better browser support */
 } 
+
+/* effects to make the airplane on the landing page fly */
+/* #logo {
+    position: relative;
+    display: inline-block;
+}
+*/
+.airplane {
+    display: inline-block;
+    position: relative;
+    left: 0; /* Start position of the airplane */
+    opacity: 1; /*Initially visible */
+    transform: translateX(-1000%); /*Start off-screen to the left */
+    animation: fly-across 1.5s ease-out forwards 0.5s; /* Fly across the text */
+}
+
+@keyframes fly-across {
+    0% {
+        transform: translateX(-1000%); /*  Start off-screen */
+    }
+    100% {
+        transform: translateX(0); /* End at the current position */
+    }
+} 
+
+#logo {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Hide any overflow */
+    white-space: nowrap; /* Ensure the text stays on one line */
+}
+
+.airplane-text {
+    opacity: 0; /* Initially hide the text */
+    display: inline-block;
+    animation: reveal-text 0.5s ease-out forwards 2s; /* Reveal after 1 second */
+}
+
+@keyframes reveal-text {
+    0% {
+        opacity: 0; /* Start hidden */
+    } 
+    100% {
+        opacity: 1; /* Fully visible */
+    } 
+}

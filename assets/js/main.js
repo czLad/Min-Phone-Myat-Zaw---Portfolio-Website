@@ -271,4 +271,26 @@
         }
     });
 
+	// Fly-up animation for sections.
+    $(document).ready(() => {
+        const $flyUpSections = $('.fly-up-section');
+    
+        const handleScroll = () => {
+            const viewportHeight = window.innerHeight;
+    
+            $flyUpSections.each(function() {
+                const $this = $(this);
+                const rect = $this[0].getBoundingClientRect();
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    $this.addClass('in-view');
+                } else {
+                    $this.removeClass('in-view'); // Optional: Remove class when out of view
+                }
+            });
+        };
+    
+        $window.on('scroll', handleScroll);
+        handleScroll(); // Initial check in case element is already in view
+    });
+
 })(jQuery);
