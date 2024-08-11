@@ -246,7 +246,7 @@
 
 		$banner
 			._parallax();
-	
+
 	//Smooth page transitions
 	$('a.internal-link').on('click', (event) => {
 		if ($(event.currentTarget).attr('href').indexOf('#') === 0) {
