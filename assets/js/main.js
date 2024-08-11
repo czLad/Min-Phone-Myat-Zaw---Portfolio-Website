@@ -248,7 +248,7 @@
 			._parallax();
 	
 	//Smooth page transitions
-	$('a').on('click', (event) => {
+	$('a.internal-link').on('click', (event) => {
 		if ($(event.currentTarget).attr('href').indexOf('#') === 0) {
 			// Ignore internal links (e.g., those linking within the same page)
 			return;

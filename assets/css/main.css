@@ -106,7 +106,7 @@ input, select, textarea {
 		opacity: 1;
 	}
 
-	a {
+	a,a.internal-link {
 		-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -117,7 +117,7 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
-		a:hover {
+		a:hover,a.internal-link:hover {
 			/* color: #e44c65 !important; */
 			/* color: #6595e1 !important; */
 			/* Dark Gold */
