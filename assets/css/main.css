@@ -2556,7 +2556,7 @@ input, select, textarea {
 			position: absolute;
 			left: 0;
 			top: 0;
-			background-image: url("images/overlay.png");
+			/* background-image: url("images/overlay.png"); */
 			width: 100%;
 			height: 100%;
 			z-index: 1;
@@ -2564,7 +2564,7 @@ input, select, textarea {
 
 		.image img {
 			border-radius: 4px;
-			display: block;
+			display: block
 		}
 
 		.image.left {
@@ -2920,6 +2920,11 @@ input, select, textarea {
 		input[type="button"].small,
 		.button.small {
 			font-size: 0.8em;
+		}
+		/* Buttons and Icons */
+		.button.small i {
+			margin-left: 8px; /* Space between icon and text */
+			font-size: 17px;
 		}
 
 		input[type="submit"].large,
@@ -4177,3 +4182,15 @@ input, select, textarea {
 					}
 
 	}
+
+/* Clearfix for floating elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Apply clearfix to the header */
+header {
+    overflow: hidden; /* Optional for better browser support */
+}  
