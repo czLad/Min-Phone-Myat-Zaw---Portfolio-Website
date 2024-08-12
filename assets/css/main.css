@@ -2238,6 +2238,17 @@ input, select, textarea {
 			max-width: 20em;
 			width: 75%;
 		}
+		header.major.alt:after{
+			background: none;
+			content: '';
+			display: inline-block;
+			height: 0.2em;
+			max-width: 20em;
+			width: 75%;
+		}
+		header.major.alt {
+			margin-bottom: 1em; /* Only affects .alt */
+		}
 
 	footer.major {
 		margin: 4em 0 0 0;
@@ -2607,6 +2618,13 @@ input, select, textarea {
 
 			.image.fit img {
 				width: 100%;
+			}
+
+			.image.fit h3 {
+				margin-top: 10px; /* Adjust spacing as needed */
+				font-size: 1.2em; /* Adjust the size as needed */
+				width: 100%; /* Ensures the h3 takes up the full width */
+				text-align: center; /* Center the text */
 			}
 
 /* List */
