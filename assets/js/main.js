@@ -300,12 +300,14 @@
 		$cards.each(function(index) {
 			const $this = $(this);
 			setTimeout(() => {
-				$this.addClass('loaded'); // Add the 'loaded' class to trigger animations
+				// Make the card visible but keep img and h3 hidden
+				$this.addClass('loading'); // Add the 'loaded' class to trigger animations
 				// Remove the 'loaded' class after the animation duration + delay to revert to default styles
 				setTimeout(() => {
-					$this.removeClass('loaded');
-				}, 1500); // Adjust this duration to match the total time of your animation
-			}, index * 1500); // Stagger the animations with a delay
+					$this.removeClass('loading');
+					$this.addClass('loaded');
+				}, 1100); // Adjust this duration to match the total time of your animation
+			}, (index+1) * 1100); // Stagger the animations with a delay
 		});
 	});
 
