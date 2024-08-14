@@ -293,4 +293,20 @@
         handleScroll(); // Initial check in case element is already in view
     });
 
+	// Fly-in animation for image fit cards.
+	$window.on('load', () => {
+		const $cards = $('.image.fit.card');
+	
+		$cards.each(function(index) {
+			const $this = $(this);
+			setTimeout(() => {
+				$this.addClass('loaded'); // Add the 'loaded' class to trigger animations
+				// Remove the 'loaded' class after the animation duration + delay to revert to default styles
+				setTimeout(() => {
+					$this.removeClass('loaded');
+				}, 1500); // Adjust this duration to match the total time of your animation
+			}, index * 1500); // Stagger the animations with a delay
+		});
+	});
+
 })(jQuery);

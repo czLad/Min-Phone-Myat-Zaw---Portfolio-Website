@@ -4271,42 +4271,86 @@ header {
     } 
 }
 /* Hover effect for image fit cards*/
+/* Base styles for image fit cards */
 .image.fit.card {
     position: relative;
     display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden; /* Ensure content stays within the container */
+    opacity: 0; /* Make sure cards are visible after animation */
 }
 
-.image.fit.card img {
-    width: 100%;
-    height: auto;
-    display: block;
+/* Initial state for fly-up animation */
+/* .image.fit.card img,
+.image.fit.card h3 { */
+    /*opacity: 0; /* Start hidden for animation effect */
+    /*transform: translateY(100px); /* Start slightly below the final position */
+/* } */
+
+/* Applied when .loaded class is added */
+.image.fit.card.loaded img {
+    opacity: 0; /* Start hidden for animation effect */
+    transform: translateY(100px); /* Start slightly below the final position */
+	animation: flyUpImg 1s ease-out forwards; /* Apply fly-up animation */
 }
 
+.image.fit.card.loaded h3 {
+    opacity: 0; /* Start hidden for animation effect */
+    transform: translateY(100px); /* Start slightly below the final position */
+	animation: flyUpH3 1s ease-out 0.5s forwards; /* Apply fly-up animation with delay */
+}
+
+/* Keyframes for fly-up animation for image */
+@keyframes flyUpImg {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
+/* Keyframes for fly-up animation for heading */
+@keyframes flyUpH3 {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+    }
+}
+
+/* Default styles remain unchanged */
+.image.fit.card{
+	opacity: 1;
+}
+
+.image.fit.card img,
 .image.fit.card h3 {
-    margin-top: 10px; /* Spacing between the image and the heading */
-    font-size: 1.2em; /* Initial font size */
-    width: 100%; /* Ensures the h3 takes up the full width */
-    text-align: center; /* Center the text */
-    transition: font-size 0.3s ease, margin-top 0.3s ease; /* Animate font size and margin-top */
-    opacity: 1;
+    opacity: 1; /* Make sure these are visible by default */
+    transform: translateY(0); /* Ensure they are in their final position */
 }
 
+/* Details container */
 .image.fit.card .details {
     position: relative;
     color: white;
-	left: 10px; /* Add space from the left edge */
+    left: 10px; /* Add space from the left edge */
     right: 10px; /* Add space from the right edge */
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
     opacity: 0;
     font-size: 0.8em; /* Similar to h5 */
-	padding: 10px; /* Add padding inside the details container */
+    padding: 10px; /* Add padding inside the details container */
     box-sizing: border-box; /* Ensure padding does not affect the width calculation */
     transition: opacity 0.3s ease;
 }
 
+/* Hover effects */
 .image.fit.card:hover {
     transform: scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
