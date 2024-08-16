@@ -4368,7 +4368,7 @@ header {
 .timeline{
 	position: relative;
 	max-width: 1200px;
-	margin: 100px auto;
+	margin: 10px auto 100px;
 }
 
 .timeline .container{
@@ -4496,6 +4496,7 @@ header {
 	border-right: 15px solid #23395d;
 	left: -14px;
 }
+/* Credentials timeline  */
 @media screen and (max-width: 600px){
 	.timeline{
 		margin: 50px auto;
@@ -4526,4 +4527,9 @@ header {
 		left: -10px;
 	}
 
+}
+
+header.journey-header h2{
+	text-align: center;
+	margin: 1em 0 1em 0;
 }
