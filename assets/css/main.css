@@ -4369,6 +4369,15 @@ header {
 	position: relative;
 	max-width: 1200px;
 	margin: 10px auto 100px;
+	animation: hide 0.4s;
+}
+@keyframes hide {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 .timeline .container{
@@ -4377,7 +4386,7 @@ header {
 	position: relative;
 	width: 50%;
 	opacity: 0;
-	animation: movedown 1s linear forwards;
+	animation: movedown 1s linear forwards 0.4s;
 	/* v useful for debugging */
 	/* background: white; */
 }
@@ -4397,19 +4406,22 @@ header {
 	animation-delay: 0s;
 }
 .timeline .container:nth-child(2){
-	animation-delay: 1s;
+	animation-delay: 0.25s;
 }
 .timeline .container:nth-child(3){
-	animation-delay: 2s;
+	animation-delay: 1.3s;
 }
 .timeline .container:nth-child(4){
-	animation-delay: 3s;
+	animation-delay: 2.3s;
 }
 .timeline .container:nth-child(5){
-	animation-delay: 4s;
+	animation-delay: 3.3s;
 }
 .timeline .container:nth-child(6){
-	animation-delay: 5s;
+	animation-delay: 4.3s;
+}
+.timeline .container:nth-child(7){
+	animation-delay: 5.3s;
 }
 
 .text-box {
@@ -4457,12 +4469,12 @@ header {
 	position: absolute;
 	width: 6px;
 	height: 100%;
-	background: #23395d;
+	background: #dddddd;
 	top: 0; 
 	left: 50%;
 	margin-left: -3px;
 	z-index: -1;
-	animation: moveline 6s linear forwards;
+	animation: moveline 6s linear forwards 0.4s;
 }
 @keyframes moveline {
 	0%{
@@ -4504,13 +4516,21 @@ header {
 	.timeline::after{
 		left: 31px;
 	}
+	.timeline .car {
+		width: 25px;
+		left: 31px;
+    }
 	.timeline .container{
 		width: 100%;
 		padding-left: 80px;
 		padding-right: 25px;
 	}
+	.timeline .message{
+		font-size: 16px;
+		transform: translate(-60%, -90%);
+	}
 	.text-box{
-		font-size: 13px
+		font-size: 13px;
 	}
 	.text-box small{
 		margin-bottom: 10px;
@@ -4529,7 +4549,65 @@ header {
 
 }
 
-header.journey-header h2{
-	text-align: center;
-	margin: 1em 0 1em 0;
+header.journey-header {
+    width: 100%; /* Make sure it spans the full width of its container */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    position: relative;
+}
+
+header.journey-header h2 {
+    margin: 1em 0; /* Adjust margins as needed */
+    text-align: center;
+}
+
+/* Car following the timeline */
+.car {
+    position: absolute;
+    width: 40px; /* Adjust the size as needed */
+    top: 0; /* Start at the top */
+    left: 50%; /* Align horizontally with the timeline */
+    transform: translateX(-50%); /* Center the car */
+    z-index: 10; /* Ensure it's above other elements */
+    opacity: 0;
+    animation: followline 6s linear forwards 0.4s; /* Match timing with timeline */
+}
+
+/* Keyframes to move the car down */
+@keyframes followline {
+    0% {
+        top: 0;
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        /* top: calc(100% - 40px); Adjust to final position */
+		top: 100%;
+        opacity: 1;
+    }
+}
+
+/* Message after timeline */
+.message {
+    display: none; /* Initially hidden */
+    text-align: center;
+    font-size: 22px; /* Adjust size as needed */
+    color: #23395d; /* Adjust color as needed */
+    position: absolute;
+    width: 100%;
+    top: 50%; /* Adjust to place the message */
+    left: 50%;
+    transform: translate(-37%, -50%);
+    z-index: 20; /* Ensure it's above other elements */
+    opacity: 0;
+}
+
+/* Message shown with animation */
+.message.show {
+    display: block; /* Show the element */
+    opacity: 1; /* Make it visible */
+	animation: fade-in 1.5s;
+	top: 103%;
 }

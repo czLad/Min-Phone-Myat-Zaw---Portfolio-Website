@@ -333,4 +333,17 @@
 		});
 	});
 
+	// Display message when car reaches the end
+	$window.on('load', function() {
+        const $car = $('.car');
+        const $message = $('.message');
+
+        $car.on('animationend', function() {
+            // Delay showing the message to ensure the car animation completes
+            setTimeout(() => {
+                $message.addClass('show');
+            }, 400); // Adjust this delay if necessary
+        });
+    });
+
 })(jQuery);
