@@ -293,28 +293,6 @@
         handleScroll(); // Initial check in case element is already in view
     });
 
-	// Move down for Journey
-	$(document).ready(() => {
-        const $flyUpSections = $('.fly-up-section');
-    
-        const handleScroll = () => {
-            const viewportHeight = window.innerHeight;
-    
-            $flyUpSections.each(function() {
-                const $this = $(this);
-                const rect = $this[0].getBoundingClientRect();
-                if (rect.top < viewportHeight && rect.bottom > 0) {
-                    $this.addClass('in-view');
-                } else {
-                    $this.removeClass('in-view'); // Optional: Remove class when out of view
-                }
-            });
-        };
-    
-        $window.on('scroll', handleScroll);
-        handleScroll(); // Initial check in case element is already in view
-    });
-
 	// Fly-in animation for image fit cards.
 	$window.on('load', () => {
 		const $cards = $('.image.fit.card');
@@ -328,8 +306,8 @@
 				setTimeout(() => {
 					$this.removeClass('loading');
 					$this.addClass('loaded');
-				}, 1100); // Adjust this duration to match the total time of your animation
-			}, (index+1) * 1100); // Stagger the animations with a delay
+				}, 800); // Adjust this duration to match the total time of your animation
+			}, (index+1) * 800); // Stagger the animations with a delay
 		});
 	});
 

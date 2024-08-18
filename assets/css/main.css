@@ -4305,7 +4305,7 @@ header {
 }
 
 .image.fit.card.loading h3 {
-	animation: flyUp 0.6s ease-out 0.5s forwards;
+	animation: flyUp 0.4s ease-out 0.4s forwards;
 }
 
 /* Default styles remain unchanged */
@@ -4369,7 +4369,8 @@ header {
 	position: relative;
 	max-width: 1200px;
 	margin: 10px auto 100px;
-	animation: hide 0.4s;
+	opacity: 1;
+	animation: hide 0.5s;
 }
 @keyframes hide {
 	0% {
