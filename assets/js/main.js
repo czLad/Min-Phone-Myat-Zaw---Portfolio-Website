@@ -29,6 +29,16 @@
 		if (browser.mobile)
 			$body.addClass('is-touch');
 
+	// Check if the browser is mobile
+		// if (browser.mobile) {
+		// 	// Check if the .spotlight.style2.right section contains a <video> tag
+		// 	$('.spotlight.style2.right').each(function() {
+		// 		if ($(this).find('video').length > 0) {
+		// 			$(this).addClass('video-mobile');
+		// 		}
+		// 	});
+		// }
+
 	// Scrolly links.
 		$('.scrolly').scrolly({
 			speed: 2000
@@ -149,17 +159,8 @@
 					var top, bottom, mode;
 
 					// Use main <img>'s src as this spotlight's background.
-					// Handle image background
-					
-					var imgSrc = $this.find('.image.main > img').attr('src');
-					if (imgSrc) {
-						$this.css('background-image', 'url("' + imgSrc + '")');
-					}
-					// Handle video background
-    				var videoSrc = $this.find('.image.main > video > source').attr('src');
-    				if (videoSrc) {
-    				    $this.find('video').attr('src', videoSrc);
-    				}
+						$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
+
 					// Side-specific scrollex tweaks.
 						if ($this.hasClass('top')) {
 

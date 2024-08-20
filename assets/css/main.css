@@ -3167,6 +3167,7 @@ input, select, textarea {
     			/*display: block; /* Remove any potential inline-block gap */
     			/*object-fit: cover; /* Ensure the video covers the area */
 			/*} */
+			/* spotlight video stuff */
 			.spotlight video {
 				position: absolute;
     			top: 50%;
@@ -3179,6 +3180,47 @@ input, select, textarea {
     			transform: translate(-50%, -50%);
     			object-fit: cover; /* Ensure the video covers the area */
 			}
+
+			@media screen and (max-width: 980px){
+				.spotlight video {
+					position: relative; /* Change to relative for better mobile compatibility */
+					top: 0;
+					left: 0;
+					max-height: 40vh;
+					transform: translate(0, 0);
+					z-index: 0;
+					margin: 0 0 -1em 0; /* -1em is a bad trick to play but it works */
+					width: 100%;
+					overflow: hidden;
+				}
+			}
+			@media screen and (max-width: 736px) {
+				.spotlight video {
+				position: relative; /* Change to relative for better mobile compatibility */
+				top: 0;
+				left: 0;
+				max-height: 60vh;
+				transform: translate(0, 0);
+				z-index: 0;
+				margin: 0 0 -1em 0; /* -1em is a bad trick to play but it works */
+				width: 100%;
+				overflow: hidden;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				.spotlight video {
+				position: relative; /* Change to relative for better mobile compatibility */
+				top: 0;
+				left: 0;
+				max-height: 50vh;
+				transform: translate(0, 0);
+				z-index: 0;
+				margin: 0 0 -1em 0; /* -1em is a bad trick to play but it works */
+				width: 100%;
+				overflow: hidden;
+				}
+			}
+
 
 		.spotlight .content {
 			-moz-transform: translate(0,0);
@@ -3295,6 +3337,20 @@ input, select, textarea {
 			-ms-transform: translate(5em,0);
 			transform: translate(5em,0);
 		}
+
+		/* .spotlight.style2.right.video-mobile video{ */
+			/* position: relative; */
+			/* position: absolute;
+    			top: 50%;
+    			left: 50%;
+    			min-width: 100%;
+    			min-height: 100%;
+    			width: 500px;
+    			height: 500px; */
+    			/*z-index: -1; /*Ensure the video is behind the content*/
+    			/*transform: translate(-50%, -50%);
+    			object-fit: cover; /* Ensure the video covers the area */
+		/* } */
 
 	body.is-touch .spotlight {
 		background-attachment: scroll;
