@@ -4594,7 +4594,6 @@ header {
 	.timeline{
 		margin: 50px auto;
 		opacity: 0;
-		animation: hide 0.5s;
 	}
 	.timeline-visible{
 		opacity: 1;
