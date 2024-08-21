@@ -4445,8 +4445,12 @@ header {
 	position: relative;
 	max-width: 1200px;
 	margin: 10px auto 100px;
-	opacity: 1;
-	animation: hide 0.5s;
+	opacity: 0;
+	/* animation: hide 0.5s; */
+}
+.timeline-visible {
+    opacity: 1; /* Fully visible after class is added */
+    animation: hide 0.5s;
 }
 @keyframes hide {
 	0% {
