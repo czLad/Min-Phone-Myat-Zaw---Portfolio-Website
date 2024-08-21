@@ -4593,6 +4593,11 @@ header {
 @media screen and (max-width: 600px){
 	.timeline{
 		margin: 50px auto;
+		opacity: 0;
+		animation: hide 0.5s;
+	}
+	.timeline-visible{
+		opacity: 1;
 	}
 	.timeline::after{
 		left: 31px;
