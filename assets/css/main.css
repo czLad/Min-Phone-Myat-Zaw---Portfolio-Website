@@ -4445,7 +4445,7 @@ header {
 	position: relative;
 	max-width: 1200px;
 	margin: 10px auto 100px;
-	opacity: 1;
+	opacity: 0;
 	animation: hide 0.5s;
 }
 @keyframes hide {
@@ -4552,6 +4552,9 @@ header {
 	margin-left: -3px;
 	z-index: -1;
 	animation: moveline 6s linear forwards 0.4s;
+}
+.timeline{
+	opacity: 1;
 }
 @keyframes moveline {
 	0%{
