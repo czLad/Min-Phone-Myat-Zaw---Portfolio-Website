@@ -4592,12 +4592,12 @@ header {
 /* Credentials timeline  */
 @media screen and (max-width: 600px){
 	.timeline{
-		margin: 50px auto;
+		margin: 50px 10px 50px;
 		/* opacity: 0; */
 	}
 	.timeline-visible{
 		opacity: 1;
-		animation: hide 0.5s;
+		/* animation: hide 0.5s; */
 	}
 	.timeline::after{
 		left: 31px;
