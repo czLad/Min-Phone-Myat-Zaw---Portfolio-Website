@@ -4445,16 +4445,12 @@ header {
 	position: relative;
 	max-width: 1200px;
 	margin: 10px auto 100px;
-	opacity: 0;
-	visibility: hidden;
-	animation: hide 0.5s;
 	/* animation: hide 0.5s; */
 }
-.timeline-visible {
-    opacity: 1; /* Fully visible after class is added */
-	visibility: visible;
-    /* animation: hide 0.5s; */
-}
+/* .timeline-visible {
+    opacity: 1;
+    animation: hide 0.5s;
+} */
 @keyframes hide {
 	0% {
 		opacity: 0;
@@ -4558,7 +4554,8 @@ header {
 	left: 50%;
 	margin-left: -3px;
 	z-index: -1;
-	animation: moveline 6s linear forwards 0.4s;
+	/* animation: moveline 6s linear forwards 0.4s; */
+	animation: moveline 6s linear forwards;
 }
 @keyframes moveline {
 	0%{
@@ -4596,12 +4593,12 @@ header {
 @media screen and (max-width: 600px){
 	.timeline{
 		margin: 50px auto;
-		opacity: 0;
+		/* opacity: 0; */
 	}
-	.timeline-visible{
+	/* .timeline-visible{
 		opacity: 1;
-		/* animation: hide 0.5s; */
-	}
+		animation: hide 0.5s;
+	} */
 	.timeline::after{
 		left: 31px;
 	}
@@ -4659,7 +4656,9 @@ header.journey-header h2 {
     transform: translateX(-50%); /* Center the car */
     z-index: 10; /* Ensure it's above other elements */
     opacity: 0;
-    animation: followline 6s linear forwards 0.4s; /* Match timing with timeline */
+    /* animation: followline 6s linear forwards 0.4s;  */
+	/* Match timing with timeline */
+	animation: followline 6s linear forwards;
 }
 
 /* Keyframes to move the car down */

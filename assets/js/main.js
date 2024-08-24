@@ -335,10 +335,10 @@
     });
 
 	//A new approach for timeline
-	$(document).ready(function() {
-		setTimeout(function() {
-			$('.timeline').addClass('timeline-visible');
-		}, 400); // Delay of 2000ms (2 seconds)
-	});
+	// $(document).ready(function() {
+	// 	setTimeout(function() {
+	// 		$('.timeline').addClass('timeline-visible');
+	// 	}, 400); // Delay of 2000ms (2 seconds)
+	// });
 
 })(jQuery);
