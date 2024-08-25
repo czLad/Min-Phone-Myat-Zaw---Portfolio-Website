@@ -4471,7 +4471,7 @@ header {
 /* Container Delays */
 .timeline .container:nth-child(1) { animation-delay: 0s; }
 .timeline .container:nth-child(2) { animation-delay: 0s; }
-.timeline .container:nth-child(3) { animation-delay: 0.25s; }
+.timeline .container:nth-child(3) { animation-delay: 0.5s; }
 .timeline .container:nth-child(4) { animation-delay: 1.3s; }
 .timeline .container:nth-child(5) { animation-delay: 2.3s; }
 .timeline .container:nth-child(6) { animation-delay: 3.3s; }
@@ -4506,7 +4506,7 @@ header {
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: -1;
-	animation: moveline 6s linear forwards;
+	animation: moveline 6s linear forwards 0.4s;
 }
 
 @keyframes moveline {
@@ -4523,7 +4523,7 @@ header {
 	transform: translateX(-50%);
 	z-index: 10;
 	opacity: 0;
-	animation: followline 6s linear forwards;
+	animation: followline 6s linear forwards 0.4s;
 }
 
 @keyframes followline {
@@ -4601,6 +4601,10 @@ header {
 		width: 100%;
 		padding-left: 80px;
 		padding-right: 25px;
+	}
+	.timeline .message{
+		font-size: 16px;
+		transform: translate(-60%, -90%);
 	}
 	.text-box {
 		font-size: 13px;
