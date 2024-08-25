@@ -4436,44 +4436,30 @@ header {
 }
 
 /* Timeline effects*/
-.timeline h3{
-	margin: 0 0 0 0;
-    padding-top: 0;
-}
-
-.timeline{
+.timeline {
 	position: relative;
 	max-width: 1200px;
 	margin: 10px auto 100px;
-	/* animation: hide 0.5s; */
-}
-/* .timeline-visible {
-    opacity: 1;
-    animation: hide 0.5s;
-} */
-@keyframes hide {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-	}
 }
 
-.timeline .container{
-	margin: 0 0 0 0;
+.timeline h3 {
+	margin: 0;
+	padding-top: 0;
+}
+
+.timeline .container {
+	margin: 0;
 	padding: 10px 50px;
 	position: relative;
 	width: 50%;
 	opacity: 0;
-	animation: movedown 1s linear forwards 0.4s;
-	/* v useful for debugging */
-	/* background: white; */
+	animation: movedown 1s linear forwards;
 }
-/* the containers moving down with the line animation */
+
+/* Containers move down with the line animation */
 @keyframes movedown {
 	0% {
-		opacity: 1;
+		opacity: 0;
 		transform: translateY(-30px);
 	}
 	100% {
@@ -4482,27 +4468,16 @@ header {
 	}
 }
 
-.timeline .container:nth-child(1){
-	animation-delay: 0s;
-}
-.timeline .container:nth-child(2){
-	animation-delay: 0.25s;
-}
-.timeline .container:nth-child(3){
-	animation-delay: 1.3s;
-}
-.timeline .container:nth-child(4){
-	animation-delay: 2.3s;
-}
-.timeline .container:nth-child(5){
-	animation-delay: 3.3s;
-}
-.timeline .container:nth-child(6){
-	animation-delay: 4.3s;
-}
-.timeline .container:nth-child(7){
-	animation-delay: 5.3s;
-}
+/* Container Delays */
+.timeline .container:nth-child(1) { animation-delay: 0s; }
+.timeline .container:nth-child(2) { animation-delay: 0s; }
+.timeline .container:nth-child(3) { animation-delay: 0.25s; }
+.timeline .container:nth-child(4) { animation-delay: 1.3s; }
+.timeline .container:nth-child(5) { animation-delay: 2.3s; }
+.timeline .container:nth-child(6) { animation-delay: 3.3s; }
+.timeline .container:nth-child(7) { animation-delay: 4.3s; }
+.timeline .container:nth-child(8) { animation-delay: 5.3s; }
+
 
 .text-box {
 	padding: 20px 30px;
@@ -4511,23 +4486,65 @@ header {
 	border-radius: 6px;
 }
 
-.text-box h3{
+.text-box h3 {
 	font-weight: 500;
 }
-.text-box small{
+
+.text-box small {
 	display: inline-block;
 	margin-bottom: 15px;
 }
-/* Timeline animation code */
-.timeline .container.left-container{
-	left: 0;
+
+/* Line in the middle */
+.timeline .line {
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 0;
+	background: #dddddd;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: -1;
+	animation: moveline 6s linear forwards;
 }
 
-.timeline .container.right-container{
-	left: 50%;
+@keyframes moveline {
+	0% { height: 0; }
+	100% { height: 100%; }
 }
-/* logo positions in timeline */
-.timeline .container.left-container img{
+
+/* Car following the timeline */
+.car {
+	position: absolute;
+	width: 40px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	opacity: 0;
+	animation: followline 6s linear forwards;
+}
+
+@keyframes followline {
+	0% {
+		top: 0;
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		top: 100%;
+		opacity: 1;
+	}
+}
+
+/* Left and Right Container Positions */
+.timeline .container.left-container { left: 0; }
+.timeline .container.right-container { left: 50%; }
+
+.timeline .container.left-container img {
 	position: absolute;
 	width: 100px;
 	right: -50px;
@@ -4535,38 +4552,16 @@ header {
 	z-index: 10;
 }
 
-.timeline .container.right-container img{
-	left: -50px;
+.timeline .container.right-container img {
 	position: absolute;
 	width: 100px;
-	right: -5px;
+	left: -50px;
 	top: 32px;
 	z-index: 10;
 }
-/* the line in the middle after is crucial here why?*/
-.timeline::after{
-	content: '';
-	position: absolute;
-	width: 6px;
-	height: 100%;
-	background: #dddddd;
-	top: 0; 
-	left: 50%;
-	margin-left: -3px;
-	z-index: -1;
-	/* animation: moveline 6s linear forwards 0.4s; */
-	animation: moveline 6s linear forwards;
-}
-@keyframes moveline {
-	0%{
-		height: 0;
-	}
-	100%{
-		height: 100%;
-	}
-}
 
-.timeline .left-container-arrow{
+/* Arrow Styling */
+.timeline .left-container-arrow {
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -4578,7 +4573,7 @@ header {
 	right: -14px;
 }
 
-.timeline .right-container-arrow{
+.timeline .right-container-arrow {
 	height: 0;
 	width: 0;
 	position: absolute;
@@ -4589,113 +4584,76 @@ header {
 	border-right: 15px solid #23395d;
 	left: -14px;
 }
-/* Credentials timeline  */
-@media screen and (max-width: 600px){
-	.timeline{
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+	.timeline {
 		margin: 50px auto;
-		/* opacity: 0; */
 	}
-	/* .timeline-visible{
-		opacity: 1;
-		animation: hide 0.5s;
-	} */
-	.timeline::after{
+	.timeline .line {
 		left: 31px;
 	}
 	.timeline .car {
 		width: 25px;
 		left: 31px;
-    }
-	.timeline .container{
+	}
+	.timeline .container {
 		width: 100%;
 		padding-left: 80px;
 		padding-right: 25px;
 	}
-	.timeline .message{
-		font-size: 16px;
-		transform: translate(-60%, -90%);
-	}
-	.text-box{
+	.text-box {
 		font-size: 13px;
 	}
-	.text-box small{
+	.text-box small {
 		margin-bottom: 10px;
 	}
-	.timeline .container.right-container{
+	.timeline .container.right-container {
 		left: 0;
 	}
-	.timeline .container.left-container img, .timeline .container.right-container img{
+	.timeline .container.left-container img, 
+	.timeline .container.right-container img {
 		left: -20px;
 	}
-	.timeline .left-container-arrow, .timeline .right-container-arrow{
+	.timeline .left-container-arrow, 
+	.timeline .right-container-arrow {
 		border-right: 15px solid #23395d;
 		border-left: 0;
 		left: -10px;
 	}
-
 }
 
+/* Header Styles */
 header.journey-header {
-    width: 100%; /* Make sure it spans the full width of its container */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: relative;
 }
 
 header.journey-header h2 {
-    margin: 1em 0; /* Adjust margins as needed */
-    text-align: center;
-}
-
-/* Car following the timeline */
-.car {
-    position: absolute;
-    width: 40px; /* Adjust the size as needed */
-    top: 0; /* Start at the top */
-    left: 50%; /* Align horizontally with the timeline */
-    transform: translateX(-50%); /* Center the car */
-    z-index: 10; /* Ensure it's above other elements */
-    opacity: 0;
-    /* animation: followline 6s linear forwards 0.4s;  */
-	/* Match timing with timeline */
-	animation: followline 6s linear forwards;
-}
-
-/* Keyframes to move the car down */
-@keyframes followline {
-    0% {
-        top: 0;
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        /* top: calc(100% - 40px); Adjust to final position */
-		top: 100%;
-        opacity: 1;
-    }
+	margin: 1em 0;
+	text-align: center;
 }
 
 /* Message after timeline */
 .message {
-    display: none; /* Initially hidden */
-    text-align: center;
-    font-size: 22px; /* Adjust size as needed */
-    color: #23395d; /* Adjust color as needed */
-    position: absolute;
-    width: 100%;
-    top: 50%; /* Adjust to place the message */
-    left: 50%;
-    transform: translate(-37%, -50%);
-    z-index: 20; /* Ensure it's above other elements */
-    opacity: 0;
+	display: none;
+	text-align: center;
+	font-size: 22px;
+	color: #23395d;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-37%, -50%);
+	z-index: 20;
+	opacity: 0;
 }
 
-/* Message shown with animation */
 .message.show {
-    display: block; /* Show the element */
-    opacity: 1; /* Make it visible */
+	display: block;
+	opacity: 1;
 	animation: fade-in 1.5s;
 	top: 103%;
 }

@@ -337,7 +337,7 @@
 	//A new approach for timeline
 	// $(document).ready(function() {
 	// 	setTimeout(function() {
-	// 		$('.timeline').addClass('timeline-visible');
+	// 		$('.timeline').addClass('line');
 	// 	}, 400); // Delay of 2000ms (2 seconds)
 	// });
 
