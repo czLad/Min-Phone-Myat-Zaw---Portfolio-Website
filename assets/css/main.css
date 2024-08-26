@@ -113,7 +113,8 @@ input, select, textarea {
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
 		/* color: #e44c65; */
-		color: #23395d;
+		color: #335285;
+		/* color: #23395d; */
 		text-decoration: none;
 	}
 
@@ -4660,4 +4661,9 @@ header.journey-header h2 {
 	opacity: 1;
 	animation: fade-in 1.5s;
 	top: 103%;
+}
+/* Styling for the attributes inside a p */
+p a {
+	color: #e1a610;
+	border-bottom: none;
 }
